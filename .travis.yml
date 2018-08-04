@@ -1,10 +1,13 @@
 language: java
 addons:
   sonarcloud:
-    organization: "jbarrag-github"
+    organization: jbarrag-github
     token:
       secure: pHeUnnux6SnLVdFKgmCZWVy2roEmU/hJ5LKLTy+vpXkyp1WuBGZXBpBvwysxZNEljqPFZ+wIX10YOxm3TTjUVnZ2G7ei/w7bjnmm02NLf2qc2/GVfy6f1htYC5Ql3sj6KLTAGYAXNRXiqKJs2R11QAzEvnw7DdLc7lsWY5Gmg8NCkqL+8iNSy1UtskyRPCwb6v1dwxz7obU/MpnuKJYCDDk8cOyGgGOmD0DjKmhsiHi1kpK9ZnIlQrQ6MNqHgbdxeurCIqp1NvTzgPPimLfK2e6Sb6t7VW28eFp4SzMvMsQ7Tcp1+YvF4083CpZ/t83EakZ2tgvAwbzIvaIrUE6RYbnE23LpCeZZm/ZK8M7Bw3RyUK3tMtZRIjxAvr1jGIgbfkVirXZ5pkKa5VCAi3vEC6HgLSnwlZq3fxeJiJcTQN1t5H8lScXFs/f2ktl7ZItgNigXw5aQT8FU9ZXML2w1pAiTGLLlAIyVHl7RrB/P7mXGzy16wRjbnFbL4cj6KWlTnHG/1SxnLIebTwkgNavSK/dtfihIom9U5WujoHBkmk5nMNf/V9H2D/zS7OFyIG6kP4xKVJ52VYEWsPRq2Z7jCq7ath1490lA+oGKYEpAAlanQraviDs16Uy/VM9DtfXPeeOWHZlIa0MDwaFFnFLP1LSs9qJa9QoK9Sj4IWlRyKI=
 script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
- 
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+deploy:
+  provider: heroku
+  api_key:
+    secure: Pcp/8y8OlzBW0nmiQUuvgGh52oENLcme51AG9nNI2dn7BjnrRM3YafzMkwTnPUWHBgcPIlk72nP5CaeQjKOtWNAbp1IbFPjBNVX2ZQ5XJAMY2K3RCMGX48vRTje9p82AWRrVEK6+ExoUsO5MRla3m/b1UFTHLuZ0k4s6LC9RAkot36w1BHutFwovolJurE4YSI0CshciekQcsWxcJNoMtPouc2toCIe1hjuYbsu8j14vXbLlp1ak1ebnUYXwFu7mgpt0WpLh0ra7jXys+if//+6Fx0LMPsaf5oq+1/5YUALS+1hvWpXQsu/LQYWw6VEVxjYOWweAwpjuDNbtYNEEcyK2EYFIYT86b2WcaV0EZnWEYcsgkQdGGHM0ovOtQbSG7lEJPYnrODeRfBZYFul8CrhF69I5meYfsG6Jav2ZoUaOppvuQtTtBrW/skWrHeMKRUCpbO5Vq2X97aahYn/Ome2Dmy7BI9o1F6MkYXy7HUSpw06Bg+mpolYY9hwN/gdXGPkUlS0RYjg4tWayQ08v2kCP/XOPdpD2Ztm7bAbYG/L6Zzu3kYpDsIWiVKY/HNuoQBjuuhB++H25QB8eKdV3ltdzNtA0v3/ZmlIgouLGv59cnZGSHkws48khNmnQhPLdHKT8c3U3TKj2YMXKnDcChSeFLxTWpAXIArSGSDEIPZg=
+  app: testcijbarrag  
