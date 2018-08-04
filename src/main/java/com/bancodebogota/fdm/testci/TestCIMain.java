@@ -12,6 +12,7 @@ package com.bancodebogota.fdm.testci;
 public class TestCIMain {
     public int sum(int n1, int n2){
         int multiplicar = n1*n2;
+        int mult = multiplicar*n2;
         return n1+n2;
     }
     public static void main(String[] args){
